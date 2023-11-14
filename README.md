@@ -61,6 +61,11 @@ of mbedTLS will be used if it is not installed.
    `cmake .. && make`
 4. Run the PS3Dec binary (`Release/PS3Dec`)
 
+#### Apple Silicon mac
+3. `brew install libomp llvm`
+4. `cmake -DOpenMP_C_FLAGS="-Xpreprocessor -fopenmp -I/opt/homebrew/opt/llvm/include" -DOpenMP_C_LIB_NAMES="omp" -DOpenMP_omp_LIBRARY=/opt/homebrew/opt/llvm/lib/libomp.dylib ..`
+5. `cmake .. && make`
+
 ### Credits
  - [ARMmbed](https://github.com/ARMmbed) for [mbedTLS](https://github.com/ARMmbed/mbedtls)
  - red_meryl for writing the software
